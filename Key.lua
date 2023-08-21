@@ -1,2 +1,3 @@
-local Key = {"HutaoDepZai"}
-return Key
+return {
+  "HutaoDepZai"
+}
