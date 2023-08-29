@@ -10,7 +10,7 @@ local library = {
 	subs = {},
 	colored = {},
 	configuration = {
-		hideKeybind = Enum.KeyCode.RightShift,
+		hideKeybind = getgenv().hideUI or Enum.KeyCode.RightShift,
 		smoothDragging = false,
 		easingStyle = Enum.EasingStyle.Quart,
 		easingDirection = Enum.EasingDirection.Out
@@ -6904,7 +6904,7 @@ function library:CreateWindow(options, ...)
 		}}, {"AddSlider", "__Designer.Slider.ImageTransparency", backgroundsection, {
 			Name = "Image Transparency",
 			Flag = "__Designer.Background.ImageTransparency",
-			Value = 95,
+			Value = 35,
 			Min = 0,
 			Max = 100,
 			Format = "Image Transparency: %s%%",
@@ -6915,21 +6915,7 @@ function library:CreateWindow(options, ...)
 			Flag = "__Designer.Background.UseBackgroundImage",
 			Value = true,
 			Callback = updatecolorsnotween
-		}}, {"AddPersistence", "__Designer.Persistence.ThemeFile", filessection, {
-			Name = "Theme Profile",
-			Flag = "__Designer.Files.ThemeFile",
-			Workspace = "Pepsi Lib Themes",
-			Flags = flags,
-			Suffix = "Theme",
-			Desginer = true
-		}}, {"AddTextbox", "__Designer.Textbox.WorkspaceName", filessection, {
-			Name = "Workspace Name",
-			Value = library.WorkspaceName or "Unnamed Workspace",
-			Flag = "__Designer.Files.WorkspaceFile",
-			Callback = function(n, o)
-				persistoptions.Workspace = n or o
-			end
-		}}, {"AddPersistence", "__Designer.Persistence.WorkspaceProfile", filessection, persistoptions}, {"AddButton", "__Designer.Button.TerminateGUI", settingssection, {{
+		}, {"AddPersistence", "__Designer.Persistence.WorkspaceProfile", filessection, persistoptions}, {"AddButton", "__Designer.Button.TerminateGUI", settingssection, {{
 			Name = "Terminate GUI",
 			Callback = library.unload
 		}, {
@@ -7012,7 +6998,7 @@ function library:CreateWindow(options, ...)
 		end
 		if options.Credit ~= false then
 			daaata[1 + #daaata] = {"AddLabel", "__Designer.Label.Creator", detailssection, {
-				Text = "Library by Ares.  "
+				Text = "Library by Hutao.  "
 			}}
 		elseif "Gee, thanks for your support." then
 		end
