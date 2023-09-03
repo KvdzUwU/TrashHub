@@ -6904,7 +6904,7 @@ function library:CreateWindow(options, ...)
 		}}, {"AddSlider", "__Designer.Slider.ImageTransparency", backgroundsection, {
 			Name = "Image Transparency",
 			Flag = "__Designer.Background.ImageTransparency",
-			Value = 35,
+			Value = 65,
 			Min = 0,
 			Max = 100,
 			Format = "Image Transparency: %s%%",
@@ -7012,7 +7012,7 @@ function library:CreateWindow(options, ...)
 		end
 		if options.Credit ~= false then
 			daaata[1 + #daaata] = {"AddLabel", "__Designer.Label.Creator", detailssection, {
-				Text = "Library by Hutao.  "
+				Text = "Discord: https://discord.gg/WeM3WuzdVH.  "
 			}}
 		elseif "Gee, thanks for your support." then
 		end
